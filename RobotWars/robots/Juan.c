@@ -5,9 +5,11 @@
 //Function Declarations
 void juan_setup();
 void juan_actions();
+void juan_hide();
 int mode_select();
 int case_select();
 void case_execute(int juan_case);
+char statusMessage[100];
 
 void juan_setup(){
     AddSensor(0,SENSOR_RADAR,45,50,RADAR_MAX_RANGE);
@@ -20,6 +22,8 @@ void juan_actions() {
 
     SetSensorStatus(0, 1);
     SetSensorStatus(1,1);
+    SetSensorStatus(2, 1);
+    SetSensorStatus(3,1);
 
     int mode_val = 0;
     mode_val = mode_select();
@@ -28,8 +32,6 @@ void juan_actions() {
     case_val = case_select();
 
     case_execute(case_val);
-
-
 
 }
 
@@ -73,7 +75,7 @@ void case_execute(int juan_case){
 
     switch(juan_case){
         case 0:
-
+            juan_hide();
         break;
 
         case 1:
@@ -93,5 +95,25 @@ void case_execute(int juan_case){
         break;
 
     }
+
+}
+
+void juan_hide(){
+
+
+
+    int front_d, back_d;
+    int left_r, right_r;
+
+    //AddSensor(0,SENSOR_RADAR,45,50,RADAR_MAX_RANGE);
+    //AddSensor(1, SENSOR_RADAR,85,50,RADAR_MAX_RANGE);
+    //AddSensor(2,SENSOR_RANGE, 0, 0,RANGE_MAX_RANGE);
+    //AddSensor(3, SENSOR_RANGE, 180,0,RANGE_MAX_RANGE);
+
+    SetMotorSpeeds(100, 100);
+    SetSystemChargeRate(SYSTEM_SHIELDS, 1000);
+
+
+
 
 }
