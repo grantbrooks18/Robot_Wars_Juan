@@ -22,8 +22,6 @@ void juan_actions() {
 
     SetSensorStatus(0, 1);
     SetSensorStatus(1,1);
-    SetSensorStatus(2, 1);
-    SetSensorStatus(3,1);
 
     int mode_val = 0;
     mode_val = mode_select();
@@ -100,20 +98,56 @@ void case_execute(int juan_case){
 
 void juan_hide(){
 
-
-
-    int front_d, back_d;
-    int left_r, right_r;
+    SetSensorStatus(0, 1);
+    SetSensorStatus(1,1);
+    SetSensorStatus(2, 1);
+    SetSensorStatus(3,1);
 
     //AddSensor(0,SENSOR_RADAR,45,50,RADAR_MAX_RANGE);
     //AddSensor(1, SENSOR_RADAR,85,50,RADAR_MAX_RANGE);
     //AddSensor(2,SENSOR_RANGE, 0, 0,RANGE_MAX_RANGE);
     //AddSensor(3, SENSOR_RANGE, 180,0,RANGE_MAX_RANGE);
 
+    int front_d, back_d;
+    int left_r, right_r;
+
+    SYSTEM juan_prios[NUM_ENERGY_SYSTEMS] = { SYSTEM_SHIELDS, SYSTEM_SENSORS,
+                                               SYSTEM_LASERS, SYSTEM_MISSILES };
+    SetSystemChargePriorites(juan_prios);
+
+
+    if (GetSystemEnergy(SYSTEM_LASERS) < 50) {
+        SetSystemChargeRate(SYSTEM_LASERS, 200);
+    } else if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
+        SetSystemChargeRate(SYSTEM_LASERS, 0);
+    }
+
+    if (GetSystemEnergy(SYSTEM_MISSILES) < 100) {
+        if (GetSystemEnergy(SYSTEM_LASERS) <= 50) {
+            SetSystemChargeRate(SYSTEM_MISSILES, 600);
+        } else if (GetSystemEnergy(SYSTEM_LASERS) >=50) {
+            SetSystemChargeRate(SYSTEM_MISSILES, 300);
+        }
+        SetSystemChargeRate(SYSTEM_MISSILES, 250);
+    } else if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
+        SetSystemChargeRate(SYSTEM_MISSILES, 0);
+    }
+
     SetMotorSpeeds(100, 100);
     SetSystemChargeRate(SYSTEM_SHIELDS, 1000);
 
+    front_d=GetSensorData(2);
+    back_d =GetSensorData(3);
+    left_r=GetSensorData(0);
+    right_r=GetSensorData(1);
 
+    sprintf(statusMessage,
+            "front_d: %i",front_d);
+    SetStatusMessage(statusMessage);
+
+    if(front_d<50){
+        SetMotorSpeeds(-100, 100);
+    }
 
 
 }
