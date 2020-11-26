@@ -1,0 +1,4 @@
+ToolSet: 3.21 (local)@D:\MinGW-Allegro-4.4.2
+Options: 
+
+Options:
