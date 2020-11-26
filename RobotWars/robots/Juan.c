@@ -98,10 +98,10 @@ void case_execute(int juan_case){
 
 void juan_hide(){
 
-    SetSensorStatus(0, 1);
-    SetSensorStatus(1,1);
+    SetSensorStatus(0, 0);
+    SetSensorStatus(1,0);
     SetSensorStatus(2, 1);
-    SetSensorStatus(3,1);
+    SetSensorStatus(3,0);
 
     //AddSensor(0,SENSOR_RADAR,45,50,RADAR_MAX_RANGE);
     //AddSensor(1, SENSOR_RADAR,85,50,RADAR_MAX_RANGE);
@@ -111,7 +111,7 @@ void juan_hide(){
     int front_d, back_d;
     int left_r, right_r;
 
-    SYSTEM juan_prios[NUM_ENERGY_SYSTEMS] = { SYSTEM_SHIELDS, SYSTEM_SENSORS,
+    SYSTEM juan_prios[NUM_ENERGY_SYSTEMS] = { SYSTEM_SENSORS, SYSTEM_SHIELDS,
                                                SYSTEM_LASERS, SYSTEM_MISSILES };
     SetSystemChargePriorites(juan_prios);
 
@@ -149,5 +149,12 @@ void juan_hide(){
         SetMotorSpeeds(-100, 100);
     }
 
+    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 380)&&((front_d<60)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
+        if (IsTurboOn() == 0) {
+            TurboBoost();
+        } else if (IsTurboOn() == 1) {
+            SetMotorSpeeds(-100, -100);
+        }
+    }
 
 }
