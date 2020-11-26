@@ -43,10 +43,10 @@ RM = "D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars"
+CMAKE_SOURCE_DIR = "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug"
+CMAKE_BINARY_DIR = "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -73,14 +73,14 @@ clean: CMakeFiles/RobotWars.dir/clean
 CMakeFiles/RobotWars.dir/all:
 	$(MAKE) -f CMakeFiles\RobotWars.dir\build.make CMakeFiles/RobotWars.dir/depend
 	$(MAKE) -f CMakeFiles\RobotWars.dir\build.make CMakeFiles/RobotWars.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target RobotWars"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target RobotWars"
 .PHONY : CMakeFiles/RobotWars.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/RobotWars.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" 11
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" 11
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/RobotWars.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/RobotWars.dir/rule
 
 # Convenience name for target.

@@ -10,39 +10,39 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
 
-The C compiler identification is GNU, found in "D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/a.exe"
+The C compiler identification is GNU, found in "D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/a.exe"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe cmTC_bb7d0/fast && D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe -f CMakeFiles\cmTC_bb7d0.dir\build.make CMakeFiles/cmTC_bb7d0.dir/build
-mingw32-make.exe[1]: Entering directory 'D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bb7d0.dir/testCCompiler.c.obj
-D:\MinGW-Allegro-4.4.2\bin\gcc.exe    -o CMakeFiles\cmTC_bb7d0.dir\testCCompiler.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c"
-Linking C executable cmTC_bb7d0.exe
-"D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_bb7d0.dir\link.txt --verbose=1
-"D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_bb7d0.dir/objects.a
-D:\MinGW-Allegro-4.4.2\bin\ar.exe cr CMakeFiles\cmTC_bb7d0.dir/objects.a @CMakeFiles\cmTC_bb7d0.dir\objects1.rsp
-D:\MinGW-Allegro-4.4.2\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_bb7d0.dir/objects.a -Wl,--no-whole-archive  -o cmTC_bb7d0.exe -Wl,--out-implib,libcmTC_bb7d0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_bb7d0.dir\linklibs.rsp
-mingw32-make.exe[1]: Leaving directory 'D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command(s):D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe cmTC_6d1f4/fast && D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe -f CMakeFiles\cmTC_6d1f4.dir\build.make CMakeFiles/cmTC_6d1f4.dir/build
+mingw32-make.exe[1]: Entering directory 'D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6d1f4.dir/testCCompiler.c.obj
+D:\MinGW-Allegro-4.4.2\bin\gcc.exe    -o CMakeFiles\cmTC_6d1f4.dir\testCCompiler.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c"
+Linking C executable cmTC_6d1f4.exe
+"D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_6d1f4.dir\link.txt --verbose=1
+"D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_6d1f4.dir/objects.a
+D:\MinGW-Allegro-4.4.2\bin\ar.exe cr CMakeFiles\cmTC_6d1f4.dir/objects.a @CMakeFiles\cmTC_6d1f4.dir\objects1.rsp
+D:\MinGW-Allegro-4.4.2\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_6d1f4.dir/objects.a -Wl,--no-whole-archive  -o cmTC_6d1f4.exe -Wl,--out-implib,libcmTC_6d1f4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_6d1f4.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe cmTC_f4403/fast && D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe -f CMakeFiles\cmTC_f4403.dir\build.make CMakeFiles/cmTC_f4403.dir/build
-mingw32-make.exe[1]: Entering directory 'D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f4403.dir/CMakeCCompilerABI.c.obj
-D:\MinGW-Allegro-4.4.2\bin\gcc.exe   -v -o CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj   -c "D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c"
+Run Build Command(s):D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe cmTC_dd692/fast && D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe -f CMakeFiles\cmTC_dd692.dir\build.make CMakeFiles/cmTC_dd692.dir/build
+mingw32-make.exe[1]: Entering directory 'D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dd692.dir/CMakeCCompilerABI.c.obj
+D:\MinGW-Allegro-4.4.2\bin\gcc.exe   -v -o CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj   -c "D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c"
 Using built-in specs.
 COLLECT_GCC=D:\MinGW-Allegro-4.4.2\bin\gcc.exe
 Target: mingw32
 Configured with: ../gcc-4.8.1/configure --prefix=/mingw --host=mingw32 --build=mingw32 --without-pic --enable-shared --enable-static --with-gnu-ld --enable-lto --enable-libssp --disable-multilib --enable-languages=c,c++,fortran,objc,obj-c++,ada --disable-sjlj-exceptions --with-dwarf2 --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --with-gmp=/usr/src/pkg/gmp-5.1.2-1-mingw32-src/bld --with-mpc=/usr/src/pkg/mpc-1.0.1-1-mingw32-src/bld --with-mpfr= --with-system-zlib --with-gnu-as --enable-decimal-float=yes --enable-libgomp --enable-threads --with-libiconv-prefix=/mingw32 --with-libintl-prefix=/mingw --disable-bootstrap LDFLAGS=-s CFLAGS=-D_USE_32BIT_TIME_T
 Thread model: win32
 gcc version 4.8.1 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro'
- d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/cc1.exe -quiet -v -iprefix d:\mingw-allegro-4.4.2\bin\../lib/gcc/mingw32/4.8.1/ D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=pentiumpro -auxbase-strip CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\tacat\AppData\Local\Temp\cce0h3Ig.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro'
+ d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/cc1.exe -quiet -v -iprefix d:\mingw-allegro-4.4.2\bin\../lib/gcc/mingw32/4.8.1/ D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=pentiumpro -auxbase-strip CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\tacat\AppData\Local\Temp\ccRDXbL4.s
 GNU C (GCC) version 4.8.1 (mingw32)
 	compiled by GNU C version 4.8.1, GMP version 5.1.2, MPFR version 3.1.2, MPC version 1.0.1
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -63,17 +63,17 @@ GNU C (GCC) version 4.8.1 (mingw32)
 	compiled by GNU C version 4.8.1, GMP version 5.1.2, MPFR version 3.1.2, MPC version 1.0.1
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 767202a405449496e68a54c4eee91a28
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro'
- d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/as.exe -v -o CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj C:\Users\tacat\AppData\Local\Temp\cce0h3Ig.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro'
+ d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/as.exe -v -o CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj C:\Users\tacat\AppData\Local\Temp\ccRDXbL4.s
 GNU assembler version 2.24 (mingw32) using BFD version (GNU Binutils) 2.24
 COMPILER_PATH=d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/;d:/mingw-allegro-4.4.2/bin/../libexec/gcc/;d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/
 LIBRARY_PATH=d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/;d:/mingw-allegro-4.4.2/bin/../lib/gcc/;d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib/;d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro'
-Linking C executable cmTC_f4403.exe
-"D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_f4403.dir\link.txt --verbose=1
-"D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_f4403.dir/objects.a
-D:\MinGW-Allegro-4.4.2\bin\ar.exe cr CMakeFiles\cmTC_f4403.dir/objects.a @CMakeFiles\cmTC_f4403.dir\objects1.rsp
-D:\MinGW-Allegro-4.4.2\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_f4403.dir/objects.a -Wl,--no-whole-archive  -o cmTC_f4403.exe -Wl,--out-implib,libcmTC_f4403.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro'
+Linking C executable cmTC_dd692.exe
+"D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_dd692.dir\link.txt --verbose=1
+"D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_dd692.dir/objects.a
+D:\MinGW-Allegro-4.4.2\bin\ar.exe cr CMakeFiles\cmTC_dd692.dir/objects.a @CMakeFiles\cmTC_dd692.dir\objects1.rsp
+D:\MinGW-Allegro-4.4.2\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_dd692.dir/objects.a -Wl,--no-whole-archive  -o cmTC_dd692.exe -Wl,--out-implib,libcmTC_dd692.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
 COLLECT_GCC=D:\MinGW-Allegro-4.4.2\bin\gcc.exe
 COLLECT_LTO_WRAPPER=d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/lto-wrapper.exe
@@ -83,9 +83,9 @@ Thread model: win32
 gcc version 4.8.1 (GCC) 
 COMPILER_PATH=d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/;d:/mingw-allegro-4.4.2/bin/../libexec/gcc/;d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/
 LIBRARY_PATH=d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/;d:/mingw-allegro-4.4.2/bin/../lib/gcc/;d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib/;d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f4403.exe' '-mtune=generic' '-march=pentiumpro'
- d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/collect2.exe -Bdynamic -o cmTC_f4403.exe d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../crt2.o d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtbegin.o -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1 -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../.. --whole-archive CMakeFiles\cmTC_f4403.dir/objects.a --no-whole-archive --out-implib libcmTC_f4403.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtend.o
-mingw32-make.exe[1]: Leaving directory 'D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dd692.exe' '-mtune=generic' '-march=pentiumpro'
+ d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/collect2.exe -Bdynamic -o cmTC_dd692.exe d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../crt2.o d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtbegin.o -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1 -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../.. --whole-archive CMakeFiles\cmTC_dd692.dir/objects.a --no-whole-archive --out-implib libcmTC_dd692.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtend.o
+mingw32-make.exe[1]: Leaving directory 'D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
@@ -108,20 +108,20 @@ Parsed C implicit include dir info from above output: rv=done
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe cmTC_f4403/fast && D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe -f CMakeFiles\cmTC_f4403.dir\build.make CMakeFiles/cmTC_f4403.dir/build]
-  ignore line: [mingw32-make.exe[1]: Entering directory 'D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_f4403.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [D:\MinGW-Allegro-4.4.2\bin\gcc.exe   -v -o CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj   -c "D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c"]
+  ignore line: [Run Build Command(s):D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe cmTC_dd692/fast && D:/MinGW-Allegro-4.4.2/bin/mingw32-make.exe -f CMakeFiles\cmTC_dd692.dir\build.make CMakeFiles/cmTC_dd692.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_dd692.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [D:\MinGW-Allegro-4.4.2\bin\gcc.exe   -v -o CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj   -c "D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c"]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=D:\MinGW-Allegro-4.4.2\bin\gcc.exe]
   ignore line: [Target: mingw32]
   ignore line: [Configured with: ../gcc-4.8.1/configure --prefix=/mingw --host=mingw32 --build=mingw32 --without-pic --enable-shared --enable-static --with-gnu-ld --enable-lto --enable-libssp --disable-multilib --enable-languages=c,c++,fortran,objc,obj-c++,ada --disable-sjlj-exceptions --with-dwarf2 --disable-win32-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --with-gmp=/usr/src/pkg/gmp-5.1.2-1-mingw32-src/bld --with-mpc=/usr/src/pkg/mpc-1.0.1-1-mingw32-src/bld --with-mpfr= --with-system-zlib --with-gnu-as --enable-decimal-float=yes --enable-libgomp --enable-threads --with-libiconv-prefix=/mingw32 --with-libintl-prefix=/mingw --disable-bootstrap LDFLAGS=-s CFLAGS=-D_USE_32BIT_TIME_T]
   ignore line: [Thread model: win32]
   ignore line: [gcc version 4.8.1 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro']
-  ignore line: [ d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/cc1.exe -quiet -v -iprefix d:\mingw-allegro-4.4.2\bin\../lib/gcc/mingw32/4.8.1/ D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=pentiumpro -auxbase-strip CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\tacat\AppData\Local\Temp\cce0h3Ig.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro']
+  ignore line: [ d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/cc1.exe -quiet -v -iprefix d:\mingw-allegro-4.4.2\bin\../lib/gcc/mingw32/4.8.1/ D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\share\cmake-3.16\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=pentiumpro -auxbase-strip CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\tacat\AppData\Local\Temp\ccRDXbL4.s]
   ignore line: [GNU C (GCC) version 4.8.1 (mingw32)]
   ignore line: [	compiled by GNU C version 4.8.1  GMP version 5.1.2  MPFR version 3.1.2  MPC version 1.0.1]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
@@ -142,8 +142,8 @@ Parsed C implicit link information from above output:
   ignore line: [	compiled by GNU C version 4.8.1  GMP version 5.1.2  MPFR version 3.1.2  MPC version 1.0.1]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 767202a405449496e68a54c4eee91a28]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro']
-  ignore line: [ d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/as.exe -v -o CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj C:\Users\tacat\AppData\Local\Temp\cce0h3Ig.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro']
+  ignore line: [ d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/bin/as.exe -v -o CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj C:\Users\tacat\AppData\Local\Temp\ccRDXbL4.s]
   ignore line: [GNU assembler version 2.24 (mingw32) using BFD version (GNU Binutils) 2.24]
   ignore line: [COMPILER_PATH=d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/]
   ignore line: [d:/mingw-allegro-4.4.2/bin/../libexec/gcc/]
@@ -152,12 +152,12 @@ Parsed C implicit link information from above output:
   ignore line: [d:/mingw-allegro-4.4.2/bin/../lib/gcc/]
   ignore line: [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib/]
   ignore line: [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_f4403.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro']
-  ignore line: [Linking C executable cmTC_f4403.exe]
-  ignore line: ["D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_f4403.dir\link.txt --verbose=1]
-  ignore line: ["D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_f4403.dir/objects.a]
-  ignore line: [D:\MinGW-Allegro-4.4.2\bin\ar.exe cr CMakeFiles\cmTC_f4403.dir/objects.a @CMakeFiles\cmTC_f4403.dir\objects1.rsp]
-  ignore line: [D:\MinGW-Allegro-4.4.2\bin\gcc.exe     -v -Wl --whole-archive CMakeFiles\cmTC_f4403.dir/objects.a -Wl --no-whole-archive  -o cmTC_f4403.exe -Wl --out-implib libcmTC_f4403.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_dd692.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentiumpro']
+  ignore line: [Linking C executable cmTC_dd692.exe]
+  ignore line: ["D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_dd692.dir\link.txt --verbose=1]
+  ignore line: ["D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_dd692.dir/objects.a]
+  ignore line: [D:\MinGW-Allegro-4.4.2\bin\ar.exe cr CMakeFiles\cmTC_dd692.dir/objects.a @CMakeFiles\cmTC_dd692.dir\objects1.rsp]
+  ignore line: [D:\MinGW-Allegro-4.4.2\bin\gcc.exe     -v -Wl --whole-archive CMakeFiles\cmTC_dd692.dir/objects.a -Wl --no-whole-archive  -o cmTC_dd692.exe -Wl --out-implib libcmTC_dd692.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=D:\MinGW-Allegro-4.4.2\bin\gcc.exe]
   ignore line: [COLLECT_LTO_WRAPPER=d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/lto-wrapper.exe]
@@ -172,12 +172,12 @@ Parsed C implicit link information from above output:
   ignore line: [d:/mingw-allegro-4.4.2/bin/../lib/gcc/]
   ignore line: [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib/]
   ignore line: [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f4403.exe' '-mtune=generic' '-march=pentiumpro']
-  link line: [ d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/collect2.exe -Bdynamic -o cmTC_f4403.exe d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../crt2.o d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtbegin.o -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1 -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../.. --whole-archive CMakeFiles\cmTC_f4403.dir/objects.a --no-whole-archive --out-implib libcmTC_f4403.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dd692.exe' '-mtune=generic' '-march=pentiumpro']
+  link line: [ d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/collect2.exe -Bdynamic -o cmTC_dd692.exe d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../crt2.o d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtbegin.o -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1 -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib -Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../.. --whole-archive CMakeFiles\cmTC_dd692.dir/objects.a --no-whole-archive --out-implib libcmTC_dd692.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtend.o]
     arg [d:/mingw-allegro-4.4.2/bin/../libexec/gcc/mingw32/4.8.1/collect2.exe] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_f4403.exe] ==> ignore
+    arg [cmTC_dd692.exe] ==> ignore
     arg [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../crt2.o] ==> ignore
     arg [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/crtbegin.o] ==> ignore
     arg [-Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1] ==> dir [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1]
@@ -185,10 +185,10 @@ Parsed C implicit link information from above output:
     arg [-Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib] ==> dir [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../../../mingw32/lib]
     arg [-Ld:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../..] ==> dir [d:/mingw-allegro-4.4.2/bin/../lib/gcc/mingw32/4.8.1/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_f4403.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_dd692.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_f4403.dll.a] ==> ignore
+    arg [libcmTC_dd692.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore

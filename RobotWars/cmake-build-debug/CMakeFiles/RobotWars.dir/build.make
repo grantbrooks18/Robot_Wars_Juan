@@ -42,10 +42,10 @@ RM = "D:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars"
+CMAKE_SOURCE_DIR = "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug"
+CMAKE_BINARY_DIR = "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RobotWars.dir/depend.make
@@ -59,142 +59,142 @@ include CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/src/competition.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/src/competition.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/src/competition.c.obj: ../src/competition.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RobotWars.dir/src/competition.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\competition.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\competition.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RobotWars.dir/src/competition.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\competition.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\competition.c"
 
 CMakeFiles/RobotWars.dir/src/competition.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/src/competition.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\competition.c" > CMakeFiles\RobotWars.dir\src\competition.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\competition.c" > CMakeFiles\RobotWars.dir\src\competition.c.i
 
 CMakeFiles/RobotWars.dir/src/competition.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/src/competition.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\competition.c" -o CMakeFiles\RobotWars.dir\src\competition.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\competition.c" -o CMakeFiles\RobotWars.dir\src\competition.c.s
 
 CMakeFiles/RobotWars.dir/src/graphics.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/src/graphics.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/src/graphics.c.obj: ../src/graphics.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RobotWars.dir/src/graphics.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\graphics.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\graphics.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RobotWars.dir/src/graphics.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\graphics.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\graphics.c"
 
 CMakeFiles/RobotWars.dir/src/graphics.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/src/graphics.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\graphics.c" > CMakeFiles\RobotWars.dir\src\graphics.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\graphics.c" > CMakeFiles\RobotWars.dir\src\graphics.c.i
 
 CMakeFiles/RobotWars.dir/src/graphics.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/src/graphics.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\graphics.c" -o CMakeFiles\RobotWars.dir\src\graphics.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\graphics.c" -o CMakeFiles\RobotWars.dir\src\graphics.c.s
 
 CMakeFiles/RobotWars.dir/src/ll.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/src/ll.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/src/ll.c.obj: ../src/ll.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/RobotWars.dir/src/ll.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\ll.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\ll.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/RobotWars.dir/src/ll.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\ll.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\ll.c"
 
 CMakeFiles/RobotWars.dir/src/ll.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/src/ll.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\ll.c" > CMakeFiles\RobotWars.dir\src\ll.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\ll.c" > CMakeFiles\RobotWars.dir\src\ll.c.i
 
 CMakeFiles/RobotWars.dir/src/ll.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/src/ll.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\ll.c" -o CMakeFiles\RobotWars.dir\src\ll.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\ll.c" -o CMakeFiles\RobotWars.dir\src\ll.c.s
 
 CMakeFiles/RobotWars.dir/src/particles.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/src/particles.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/src/particles.c.obj: ../src/particles.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RobotWars.dir/src/particles.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\particles.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\particles.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RobotWars.dir/src/particles.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\particles.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\particles.c"
 
 CMakeFiles/RobotWars.dir/src/particles.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/src/particles.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\particles.c" > CMakeFiles\RobotWars.dir\src\particles.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\particles.c" > CMakeFiles\RobotWars.dir\src\particles.c.i
 
 CMakeFiles/RobotWars.dir/src/particles.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/src/particles.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\particles.c" -o CMakeFiles\RobotWars.dir\src\particles.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\particles.c" -o CMakeFiles\RobotWars.dir\src\particles.c.s
 
 CMakeFiles/RobotWars.dir/src/physics.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/src/physics.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/src/physics.c.obj: ../src/physics.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RobotWars.dir/src/physics.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\physics.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\physics.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RobotWars.dir/src/physics.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\physics.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\physics.c"
 
 CMakeFiles/RobotWars.dir/src/physics.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/src/physics.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\physics.c" > CMakeFiles\RobotWars.dir\src\physics.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\physics.c" > CMakeFiles\RobotWars.dir\src\physics.c.i
 
 CMakeFiles/RobotWars.dir/src/physics.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/src/physics.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\physics.c" -o CMakeFiles\RobotWars.dir\src\physics.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\physics.c" -o CMakeFiles\RobotWars.dir\src\physics.c.s
 
 CMakeFiles/RobotWars.dir/src/rockemsockem.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/src/rockemsockem.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/src/rockemsockem.c.obj: ../src/rockemsockem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RobotWars.dir/src/rockemsockem.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\rockemsockem.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\rockemsockem.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RobotWars.dir/src/rockemsockem.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\src\rockemsockem.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\rockemsockem.c"
 
 CMakeFiles/RobotWars.dir/src/rockemsockem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/src/rockemsockem.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\rockemsockem.c" > CMakeFiles\RobotWars.dir\src\rockemsockem.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\rockemsockem.c" > CMakeFiles\RobotWars.dir\src\rockemsockem.c.i
 
 CMakeFiles/RobotWars.dir/src/rockemsockem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/src/rockemsockem.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\src\rockemsockem.c" -o CMakeFiles\RobotWars.dir\src\rockemsockem.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\src\rockemsockem.c" -o CMakeFiles\RobotWars.dir\src\rockemsockem.c.s
 
 CMakeFiles/RobotWars.dir/robots/bender.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/robots/bender.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/robots/bender.c.obj: ../robots/bender.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RobotWars.dir/robots/bender.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\robots\bender.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\bender.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RobotWars.dir/robots/bender.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\robots\bender.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\bender.c"
 
 CMakeFiles/RobotWars.dir/robots/bender.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/robots/bender.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\bender.c" > CMakeFiles\RobotWars.dir\robots\bender.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\bender.c" > CMakeFiles\RobotWars.dir\robots\bender.c.i
 
 CMakeFiles/RobotWars.dir/robots/bender.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/robots/bender.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\bender.c" -o CMakeFiles\RobotWars.dir\robots\bender.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\bender.c" -o CMakeFiles\RobotWars.dir\robots\bender.c.s
 
 CMakeFiles/RobotWars.dir/robots/maximilian.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/robots/maximilian.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/robots/maximilian.c.obj: ../robots/maximilian.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/RobotWars.dir/robots/maximilian.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\robots\maximilian.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\maximilian.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/RobotWars.dir/robots/maximilian.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\robots\maximilian.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\maximilian.c"
 
 CMakeFiles/RobotWars.dir/robots/maximilian.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/robots/maximilian.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\maximilian.c" > CMakeFiles\RobotWars.dir\robots\maximilian.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\maximilian.c" > CMakeFiles\RobotWars.dir\robots\maximilian.c.i
 
 CMakeFiles/RobotWars.dir/robots/maximilian.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/robots/maximilian.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\maximilian.c" -o CMakeFiles\RobotWars.dir\robots\maximilian.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\maximilian.c" -o CMakeFiles\RobotWars.dir\robots\maximilian.c.s
 
 CMakeFiles/RobotWars.dir/robots/Teemo.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/robots/Teemo.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/robots/Teemo.c.obj: ../robots/Teemo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/RobotWars.dir/robots/Teemo.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\robots\Teemo.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\Teemo.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/RobotWars.dir/robots/Teemo.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\robots\Teemo.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\Teemo.c"
 
 CMakeFiles/RobotWars.dir/robots/Teemo.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/robots/Teemo.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\Teemo.c" > CMakeFiles\RobotWars.dir\robots\Teemo.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\Teemo.c" > CMakeFiles\RobotWars.dir\robots\Teemo.c.i
 
 CMakeFiles/RobotWars.dir/robots/Teemo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/robots/Teemo.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\Teemo.c" -o CMakeFiles\RobotWars.dir\robots\Teemo.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\Teemo.c" -o CMakeFiles\RobotWars.dir\robots\Teemo.c.s
 
 CMakeFiles/RobotWars.dir/robots/Juan.c.obj: CMakeFiles/RobotWars.dir/flags.make
 CMakeFiles/RobotWars.dir/robots/Juan.c.obj: CMakeFiles/RobotWars.dir/includes_C.rsp
 CMakeFiles/RobotWars.dir/robots/Juan.c.obj: ../robots/Juan.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/RobotWars.dir/robots/Juan.c.obj"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\robots\Juan.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\Juan.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/RobotWars.dir/robots/Juan.c.obj"
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\RobotWars.dir\robots\Juan.c.obj   -c "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\Juan.c"
 
 CMakeFiles/RobotWars.dir/robots/Juan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RobotWars.dir/robots/Juan.c.i"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\Juan.c" > CMakeFiles\RobotWars.dir\robots\Juan.c.i
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\Juan.c" > CMakeFiles\RobotWars.dir\robots\Juan.c.i
 
 CMakeFiles/RobotWars.dir/robots/Juan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RobotWars.dir/robots/Juan.c.s"
-	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\robots\Juan.c" -o CMakeFiles\RobotWars.dir\robots\Juan.c.s
+	D:\MinGW-Allegro-4.4.2\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\robots\Juan.c" -o CMakeFiles\RobotWars.dir\robots\Juan.c.s
 
 # Object files for target RobotWars
 RobotWars_OBJECTS = \
@@ -211,10 +211,10 @@ RobotWars_OBJECTS = \
 
 # External object files for target RobotWars
 RobotWars_EXTERNAL_OBJECTS = \
-"D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/robots/precompiled/6R4V3 D1663R.o" \
-"D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/robots/precompiled/capsule1337.o" \
-"D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/robots/precompiled/JR.o" \
-"D:/User Files/Documents/School/Year 2/EEE 243/Lab6/RobotWars/robots/precompiled/Lopez.o"
+"D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/robots/precompiled/6R4V3 D1663R.o" \
+"D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/robots/precompiled/capsule1337.o" \
+"D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/robots/precompiled/JR.o" \
+"D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/robots/precompiled/Lopez.o"
 
 RobotWars.exe: CMakeFiles/RobotWars.dir/src/competition.c.obj
 RobotWars.exe: CMakeFiles/RobotWars.dir/src/graphics.c.obj
@@ -234,7 +234,7 @@ RobotWars.exe: CMakeFiles/RobotWars.dir/build.make
 RobotWars.exe: CMakeFiles/RobotWars.dir/linklibs.rsp
 RobotWars.exe: CMakeFiles/RobotWars.dir/objects1.rsp
 RobotWars.exe: CMakeFiles/RobotWars.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable RobotWars.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable RobotWars.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\RobotWars.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -247,6 +247,6 @@ CMakeFiles/RobotWars.dir/clean:
 .PHONY : CMakeFiles/RobotWars.dir/clean
 
 CMakeFiles/RobotWars.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars" "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars" "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug" "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug" "D:\User Files\Documents\School\Year 2\EEE 243\Lab6\RobotWars\cmake-build-debug\CMakeFiles\RobotWars.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars" "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars" "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug" "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug" "D:\User Files\Documents\School\Year 2\EEE 243\Git\Robot_Wars_Juan\RobotWars\cmake-build-debug\CMakeFiles\RobotWars.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/RobotWars.dir/depend
 
