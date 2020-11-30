@@ -6,16 +6,19 @@
 void juan_setup();
 void juan_actions();
 void juan_hide();
+void juan_find();
 int mode_select();
 int case_select();
 void case_execute(int juan_case);
 char statusMessage[100];
 
 void juan_setup(){
-    AddSensor(0,SENSOR_RADAR,45,50,RADAR_MAX_RANGE);
-    AddSensor(1, SENSOR_RADAR,85,50,RADAR_MAX_RANGE);
+
+    AddSensor(0,SENSOR_RADAR,40,40,RADAR_MAX_RANGE);
+    AddSensor(1, SENSOR_RADAR,90,40,RADAR_MAX_RANGE);
     AddSensor(2,SENSOR_RANGE, 0, 0,RANGE_MAX_RANGE);
     AddSensor(3, SENSOR_RANGE, 180,0,RANGE_MAX_RANGE);
+
 }
 
 void juan_actions() {
@@ -55,7 +58,10 @@ int case_select(){
     if(GetSystemEnergy(SYSTEM_SHIELDS) < 400){
         return 0;
     }
+    else if(GetSystemEnergy(SYSTEM_SHIELDS) > 400){ //testing search
 
+        return 1;
+    }
     if((GetSensorData(1) + GetSensorData(2)) == 0){
         return 1;
     }
@@ -77,7 +83,7 @@ void case_execute(int juan_case){
         break;
 
         case 1:
-
+            juan_find();
         break;
 
         case 2:
@@ -97,16 +103,14 @@ void case_execute(int juan_case){
 }
 
 void juan_hide(){
+    sprintf(statusMessage,
+            "Dios Mio! Hiding!");
+    SetStatusMessage(statusMessage);
 
     SetSensorStatus(0, 0);
     SetSensorStatus(1,0);
     SetSensorStatus(2, 1);
     SetSensorStatus(3,0);
-
-    //AddSensor(0,SENSOR_RADAR,45,50,RADAR_MAX_RANGE);
-    //AddSensor(1, SENSOR_RADAR,85,50,RADAR_MAX_RANGE);
-    //AddSensor(2,SENSOR_RANGE, 0, 0,RANGE_MAX_RANGE);
-    //AddSensor(3, SENSOR_RANGE, 180,0,RANGE_MAX_RANGE);
 
     int front_d, back_d;
     int left_r, right_r;
@@ -141,11 +145,8 @@ void juan_hide(){
     left_r=GetSensorData(0);
     right_r=GetSensorData(1);
 
-    sprintf(statusMessage,
-            "front_d: %i",front_d);
-    SetStatusMessage(statusMessage);
-
     if(front_d<50){
+
         SetMotorSpeeds(-100, 100);
     }
 
@@ -156,5 +157,80 @@ void juan_hide(){
             SetMotorSpeeds(-100, -100);
         }
     }
+
+}
+
+void juan_find(){
+    sprintf(statusMessage,
+            "On the prowl!");
+    SetStatusMessage(statusMessage);
+    if (GetSystemEnergy(SYSTEM_LASERS) < 50) {
+        SetSystemChargeRate(SYSTEM_LASERS, 500);
+    } else if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
+        SetSystemChargeRate(SYSTEM_LASERS, 0);
+    }
+
+    if (GetSystemEnergy(SYSTEM_MISSILES) < 100) {
+        if (GetSystemEnergy(SYSTEM_LASERS) <= 50) {
+            SetSystemChargeRate(SYSTEM_MISSILES, 600);
+        }
+    } else if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
+        SetSystemChargeRate(SYSTEM_MISSILES, 0);
+    }
+
+    SetSystemChargeRate(SYSTEM_SHIELDS, 500);
+
+    SetSensorStatus(0, 1);
+    SetSensorStatus(1,1);
+    SetSensorStatus(2, 1);
+    SetSensorStatus(3,0);
+
+    SetMotorSpeeds(100, 100);
+
+    int rad_top=GetSensorData(0);
+    int rad_bottom=GetSensorData(1);
+    int front_d=GetSensorData(2);
+    int lock;
+
+
+    if(rad_top==1){
+        SetMotorSpeeds(80, 100 );
+        lock++;
+    }
+
+    if(rad_bottom==1){
+        SetMotorSpeeds(100, 80);
+        lock++;
+
+    }
+
+    if(front_d<80){
+        SetMotorSpeeds(100, -100);
+    }
+
+    if ((lock==1)||(GetSystemEnergy(SYSTEM_SHIELDS) > 500)&&((front_d<60)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
+        if (IsTurboOn() == 0) {
+            TurboBoost();
+        } else if (IsTurboOn() == 1) {
+            SetMotorSpeeds(-100, -100);
+        }
+    }
+
+    if((rad_bottom==1)&&(rad_top==1)){
+          if(lock>0){
+
+                  if (GetSystemEnergy(SYSTEM_LASERS) > 25) {
+                      FireWeapon(WEAPON_LASER, 80);
+                  }
+
+                  if (GetSystemEnergy(SYSTEM_MISSILES) > 50) {
+                    FireWeapon(WEAPON_MISSILE, 80);
+                  }
+          }
+
+          SetMotorSpeeds(100, 50);
+    }
+
+
 
 }
