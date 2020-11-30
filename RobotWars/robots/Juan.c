@@ -204,11 +204,58 @@ void juan_find(){
 
     }
 
+
     if(front_d<80){
-        SetMotorSpeeds(100, -100);
+        GPS_INFO gpsData;
+        if(GetSystemEnergy(SYSTEM_SHIELDS) > 500){
+            GetGPSInfo(&gpsData);
+
+            sprintf(statusMessage,
+                    "x: %f\n y: %f\n heading: %f\n",gpsData.x,gpsData.y,gpsData.heading);
+            SetStatusMessage(statusMessage);
+
+            if(((gpsData.x<40)||(gpsData.x>300))&&((gpsData.y<40)||(gpsData.y>300))){ //robot in corner
+                sprintf(statusMessage,
+                        "Dios Mio! Corner Detected!/n");
+                SetStatusMessage(statusMessage);
+
+                if((gpsData.x<40)&&((gpsData.y<40))){ //bottom left
+
+                    if((gpsData.heading!=50)){
+                        SetMotorSpeeds(-100, 100);
+                    }
+
+                }
+
+                if((gpsData.x<40)&&((gpsData.y>300))){ //top left
+
+                    if((gpsData.heading!=120)){
+                        SetMotorSpeeds(-100, 100);
+                    }
+
+                }
+
+                if((gpsData.x>300)&&((gpsData.y>300))){ //top right
+
+                    if((gpsData.heading!=240)){
+                        SetMotorSpeeds(-100, 100);
+                    }
+
+                }
+
+                if((gpsData.x>300)&&((gpsData.y<40 ))){ //bottom right
+
+                    if((gpsData.heading!=320)){
+                        SetMotorSpeeds(-100, 100);
+                    }
+
+                }
+
+            }
+        }
     }
 
-    if ((lock==1)||(GetSystemEnergy(SYSTEM_SHIELDS) > 500)&&((front_d<60)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
+    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 500)&&((front_d<60)&&((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
         if (IsTurboOn() == 0) {
             TurboBoost();
         } else if (IsTurboOn() == 1) {
