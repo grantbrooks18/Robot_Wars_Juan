@@ -1,1 +1,1 @@
--IC:/Robot_Wars_Juan/RobotWars/precompiled -IC:/Robot_Wars_Juan/RobotWars/resources -IC:/Robot_Wars_Juan/RobotWars/src 
+-IC:/MinGW-Allegro-4.4.2/include -I"D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/precompiled" -I"D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/resources" -I"D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/src" 

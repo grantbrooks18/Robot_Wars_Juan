@@ -10,17 +10,15 @@ void juan_find();
 void juan_chase();
 void Juan_fight();
 int mode_select();
-int case_select();
+int case_select(int mode_val);
 void case_execute(int juan_case);
 char statusMessage[100];
 
 void juan_setup(){
-
     AddSensor(0,SENSOR_RADAR,40,40,RADAR_MAX_RANGE);
     AddSensor(1, SENSOR_RADAR,90,40,RADAR_MAX_RANGE);
     AddSensor(2,SENSOR_RANGE, 0, 0,RANGE_MAX_RANGE);
     AddSensor(3, SENSOR_RANGE, 180,0,RANGE_MAX_RANGE);
-
 }
 
 void juan_actions() {
@@ -32,32 +30,29 @@ void juan_actions() {
     mode_val = mode_select();
 
     int case_val = 0;
-    case_val = case_select();
+    case_val = case_select(mode_val);
 
     case_execute(case_val);
 
 }
 
 int mode_select(){
-    if(GetGeneratorStructure() < 250){
+    if(GetGeneratorStructure() < (MAX_GENERATOR_STRUCTURE/2)){
         return 1;
     } else{
         return 0;
     }
 }
 
-int case_select(){
+int case_select(int mode_val){
     /* Case 0: Hide
      * Case 1: Search
      * Case 2: Chase
      * Case 3: Combat
      */
 
-    if((GetSystemEnergy(SYSTEM_SHIELDS) < 400) && (mode_val == 0)){
+    if((GetSystemEnergy(SYSTEM_SHIELDS) < (MAX_SHIELD_ENERGY/2)) && (mode_val == 0)){
         return 0;
-    }
-    if((GetSystemEnergy(SYSTEM_SHIELDS) > 400) && (mode_val == 0)){ //testing search
-        return 1;
     }
     if(((GetSensorData(1) + GetSensorData(2)) == 0) && (mode_val == 0)){
         return 1;
@@ -115,17 +110,17 @@ void juan_hide(){
     SetSystemChargePriorites(juan_prios);
 
 
-    if (GetSystemEnergy(SYSTEM_LASERS) < 50) {
+    if (GetSystemEnergy(SYSTEM_LASERS) < MAX_LASER_ENERGY) {
         SetSystemChargeRate(SYSTEM_LASERS, 200);
-    } else if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
+    } else if (GetSystemEnergy(SYSTEM_LASERS) >= MAX_LASER_ENERGY) {
         SetSystemChargeRate(SYSTEM_LASERS, 0);
     }
 
-    if (GetSystemEnergy(SYSTEM_MISSILES) < 100) {
-        if (GetSystemEnergy(SYSTEM_LASERS) <= 50) {
-            SetSystemChargeRate(SYSTEM_MISSILES, 600);
-        } else if (GetSystemEnergy(SYSTEM_LASERS) >=50) {
-            SetSystemChargeRate(SYSTEM_MISSILES, 300);
+    if (GetSystemEnergy(SYSTEM_MISSILES) < MIN_MISSILE_ENERGY) {
+        if (GetSystemEnergy(SYSTEM_LASERS) <= (MIN_MISSILE_ENERGY/2)) {
+            SetSystemChargeRate(SYSTEM_MISSILES, MAX_MISSILE_CHARGE_RATE);
+        } else if (GetSystemEnergy(SYSTEM_LASERS) >=(MIN_MISSILE_ENERGY/2)) {
+            SetSystemChargeRate(SYSTEM_MISSILES, (MAX_MISSILE_CHARGE_RATE/2));
         }
         SetSystemChargeRate(SYSTEM_MISSILES, 250);
     } else if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
@@ -157,7 +152,7 @@ void juan_hide(){
 
 void juan_find(){
     sprintf(statusMessage,
-            "On the prowl!");
+            "Donde estan!?");
     SetStatusMessage(statusMessage);
     if (GetSystemEnergy(SYSTEM_LASERS) < 50) {
         SetSystemChargeRate(SYSTEM_LASERS, 500);
