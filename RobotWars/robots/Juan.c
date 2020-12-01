@@ -122,8 +122,7 @@ void juan_hide(){
         } else if (GetSystemEnergy(SYSTEM_LASERS) >=(MIN_MISSILE_ENERGY/2)) {
             SetSystemChargeRate(SYSTEM_MISSILES, (MAX_MISSILE_CHARGE_RATE/2));
         }
-        SetSystemChargeRate(SYSTEM_MISSILES, 250);
-    } else if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
+    } else if (GetSystemEnergy(SYSTEM_MISSILES) >= MAX_MISSILE_ENERGY) {
         SetSystemChargeRate(SYSTEM_MISSILES, 0);
     }
 
