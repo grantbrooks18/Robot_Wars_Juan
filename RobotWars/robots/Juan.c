@@ -205,7 +205,7 @@ void juan_find(){
     }
 
 
-    if(front_d<80){
+
         GPS_INFO gpsData;
         if(GetSystemEnergy(SYSTEM_SHIELDS) > 500){
             GetGPSInfo(&gpsData);
@@ -216,44 +216,67 @@ void juan_find(){
 
             if(((gpsData.x<40)||(gpsData.x>300))&&((gpsData.y<40)||(gpsData.y>300))){ //robot in corner
                 sprintf(statusMessage,
-                        "Dios Mio! Corner Detected!/n");
+                        "Dios Mio! Corner Detected! \nHeading: %f",gpsData.heading);
                 SetStatusMessage(statusMessage);
 
                 if((gpsData.x<40)&&((gpsData.y<40))){ //bottom left
-
-                    if((gpsData.heading!=50)){
-                        SetMotorSpeeds(-100, 100);
+                    sprintf(statusMessage,
+                            "Bottom Left Corner!\n Heading: %f",gpsData.heading);
+                    SetStatusMessage(statusMessage);
+                    if(abs(gpsData.heading-45)>5){
+                        SetMotorSpeeds(50, -50);
                     }
+                    else{
+                        SetMotorSpeeds(100,100);
+                    }
+
 
                 }
 
                 if((gpsData.x<40)&&((gpsData.y>300))){ //top left
+                    sprintf(statusMessage,
+                            "Top Left Corner! \n Heading: %f",gpsData.heading);
+                    SetStatusMessage(statusMessage);
 
-                    if((gpsData.heading!=120)){
-                        SetMotorSpeeds(-100, 100);
+                    if(abs(gpsData.heading-315)<5){
+                        SetMotorSpeeds(100,-100);
+                    } else{
+                        SetMotorSpeeds(100,100);
                     }
 
                 }
 
                 if((gpsData.x>300)&&((gpsData.y>300))){ //top right
-
-                    if((gpsData.heading!=240)){
-                        SetMotorSpeeds(-100, 100);
+                    sprintf(statusMessage,
+                            "Top Right Corner!\n Heading: %f",gpsData.heading);
+                    SetStatusMessage(statusMessage);
+                    if(abs(gpsData.heading-225)>5){
+                        SetMotorSpeeds(50, -50);
                     }
+                    else{
+                        SetMotorSpeeds(100,100);
+                    }
+
 
                 }
 
                 if((gpsData.x>300)&&((gpsData.y<40 ))){ //bottom right
-
-                    if((gpsData.heading!=320)){
-                        SetMotorSpeeds(-100, 100);
+                    sprintf(statusMessage,
+                            "Bottom Right Corner!\n Heading: %f",gpsData.heading);
+                    SetStatusMessage(statusMessage);
+                    if(abs(gpsData.heading-135)>5){
+                        SetMotorSpeeds(50, -50);
                     }
+                    else{
+                        SetMotorSpeeds(100,100);
+                    }
+
 
                 }
 
             }
         }
-    }
+
 
     if ((GetSystemEnergy(SYSTEM_SHIELDS) > 500)&&((front_d<60)&&((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
         if (IsTurboOn() == 0) {
