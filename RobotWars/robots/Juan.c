@@ -7,6 +7,8 @@ void juan_setup();
 void juan_actions();
 void juan_hide();
 void juan_find();
+void juan_chase();
+void Juan_fight();
 int mode_select();
 int case_select();
 void case_execute(int juan_case);
@@ -37,40 +39,33 @@ void juan_actions() {
 }
 
 int mode_select(){
-
     if(GetGeneratorStructure() < 250){
         return 1;
     } else{
         return 0;
     }
-
 }
 
 int case_select(){
-
     /* Case 0: Hide
      * Case 1: Search
      * Case 2: Chase
      * Case 3: Combat
      */
 
-
-    if(GetSystemEnergy(SYSTEM_SHIELDS) < 400){
+    if((GetSystemEnergy(SYSTEM_SHIELDS) < 400) && (mode_val == 0)){
         return 0;
     }
-    else if(GetSystemEnergy(SYSTEM_SHIELDS) > 400){ //testing search
-
+    if((GetSystemEnergy(SYSTEM_SHIELDS) > 400) && (mode_val == 0)){ //testing search
         return 1;
     }
-    if((GetSensorData(1) + GetSensorData(2)) == 0){
+    if(((GetSensorData(1) + GetSensorData(2)) == 0) && (mode_val == 0)){
         return 1;
     }
-
-    if((GetSensorData(1) + GetSensorData(2)) == 1){
+    if(((GetSensorData(1) + GetSensorData(2)) == 1) && (mode_val == 0)){
         return 2;
     }
-
-    if((GetSensorData(1) + GetSensorData(2)) == 2){
+    if(((GetSensorData(1) + GetSensorData(2)) == 2) && (mode_val == 0)){
         return 3;
     }
 }
@@ -87,11 +82,11 @@ void case_execute(int juan_case){
         break;
 
         case 2:
-
+            juan_chase();
         break;
 
         case 3:
-
+            juan_fight();
         break;
 
         case 4:
