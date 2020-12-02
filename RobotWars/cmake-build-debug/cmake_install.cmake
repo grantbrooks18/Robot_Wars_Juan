@@ -1,4 +1,4 @@
-# Install script for directory: D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars
+# Install script for directory: C:/Robot_Wars_Juan/RobotWars
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/User Files/Documents/School/Year 2/EEE 243/Git/Robot_Wars_Juan/RobotWars/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Robot_Wars_Juan/RobotWars/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
