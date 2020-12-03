@@ -2,11 +2,15 @@
 #include "..\src\competition.h"
 #include "Juan.h"
 
+#include<math.h>
+#define pi acos(-1.0)
+
 //Function Declarations
 void juan_setup();
 void juan_actions();
 void juan_hide();
 void juan_find();
+void juan_obstacle(int *obstacle);
 void juan_chase();
 void juan_fight(int radar_top, int radar_bottom, int lock);
 int mode_select();
@@ -96,17 +100,17 @@ void case_execute(int juan_case){
 }
 
 void juan_hide(){
-    sprintf(statusMessage,
-            "Dios Mio! Hiding!");
-    SetStatusMessage(statusMessage);
 
-    SetSensorStatus(0, 0);
+    SetSensorStatus(0, 1);
     SetSensorStatus(1,0);
     SetSensorStatus(2, 1);
     SetSensorStatus(3,0);
 
-    int front_d, back_d;
-    int left_r, right_r;
+    int front_d;
+    int radar_top;
+
+    radar_top=GetSensorData(0);
+
 
     SYSTEM juan_prios[NUM_ENERGY_SYSTEMS] = { SYSTEM_SENSORS, SYSTEM_SHIELDS,
                                                SYSTEM_LASERS, SYSTEM_MISSILES };
@@ -119,7 +123,7 @@ void juan_hide(){
         SetSystemChargeRate(SYSTEM_LASERS, 0);
     }
 
-    if (GetSystemEnergy(SYSTEM_MISSILES) < 100) {
+    if (GetSystemEnergy(SYSTEM_MISSILES) < MAX_MISSILE_ENERGY) {
         if (GetSystemEnergy(SYSTEM_LASERS) <= 50) {
             SetSystemChargeRate(SYSTEM_MISSILES, 600);
         } else if (GetSystemEnergy(SYSTEM_LASERS) >=50) {
@@ -129,33 +133,32 @@ void juan_hide(){
         SetSystemChargeRate(SYSTEM_MISSILES, 0);
     }
 
+    if (GetSystemEnergy(SYSTEM_SHIELDS) < MAX_SHIELD_ENERGY) {
+        SetSystemChargeRate(SYSTEM_SHIELDS,MAX_SHIELD_CHARGE_RATE);
+    } else if (GetSystemEnergy(SYSTEM_SHIELDS) >= MAX_SHIELD_ENERGY) {
+        SetSystemChargeRate(SYSTEM_SHIELDS, 0);
+    }
     SetMotorSpeeds(100, 100);
     SetSystemChargeRate(SYSTEM_SHIELDS, 1000);
 
     front_d=GetSensorData(2);
-    back_d =GetSensorData(3);
-    left_r=GetSensorData(0);
-    right_r=GetSensorData(1);
 
     if(front_d<50){
 
         SetMotorSpeeds(-100, 100);
     }
 
-    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 380)&&((front_d<60)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
+    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 380)&&((radar_top==1)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
         if (IsTurboOn() == 0) {
             TurboBoost();
         } else if (IsTurboOn() == 1) {
-            SetMotorSpeeds(-100, -100);
+            SetMotorSpeeds(100, 100);
         }
     }
 
 }
 
 void juan_find(){
-    sprintf(statusMessage,
-            "On the prowl!");
-    SetStatusMessage(statusMessage);
 
     SetSensorStatus(0, 1);
     SetSensorStatus(1,1);
@@ -194,81 +197,76 @@ void juan_find(){
         SetMotorSpeeds(100, 70);
         lock++;
     }
-    //combat function
+
     if(lock>0){
         juan_fight(radar_top,radar_bottom,lock);
     }
+    int obstacle;
 
-    if((front_d<80)&&(radar_bottom==0)&&(radar_top==0)){
-
-        GPS_INFO gpsData;
-
-        if(GetSystemEnergy(SYSTEM_SHIELDS) > 400) {
-            GetGPSInfo(&gpsData);
-
-            sprintf(statusMessage,
-                    "x: %f\n y: %f\n heading: %f\n", gpsData.x, gpsData.y, gpsData.heading);
-            SetStatusMessage(statusMessage);
-
-            if (((gpsData.x < 40) || (gpsData.x > 300)) && ((gpsData.y < 40) || (gpsData.y > 300))) { //robot in corner
-                sprintf(statusMessage,
-                        "Corner Detected! \nHeading: %f", gpsData.heading);
-                SetStatusMessage(statusMessage);
-
-                if ((gpsData.x < 40) && ((gpsData.y < 40))) { //bottom left
-                    sprintf(statusMessage,
-                            "Bottom Left Corner!\n Heading: %f", gpsData.heading);
-                    SetStatusMessage(statusMessage);
-                    if (abs(gpsData.heading - 45) > 5) {
-                        SetMotorSpeeds(100, -100);
-                    } else {
-                        SetMotorSpeeds(100, 100);
-                    }
-
-                }
-
-                if ((gpsData.x < 40) && ((gpsData.y > 300))) { //top left
-                    sprintf(statusMessage,
-                            "Top Left Corner! \n Heading: %f", gpsData.heading);
-                    SetStatusMessage(statusMessage);
-
-                    if (abs(gpsData.heading - 315) < 5) {
-                        SetMotorSpeeds(100, -100);
-                    } else {
-                        SetMotorSpeeds(100, 100);
-                    }
-
-                }
-
-                if ((gpsData.x > 300) && ((gpsData.y > 300))) { //top right
-                    sprintf(statusMessage,
-                            "Top Right Corner!\n Heading: %f", gpsData.heading);
-                    SetStatusMessage(statusMessage);
-                    if (abs(gpsData.heading - 225) > 5) {
-                        SetMotorSpeeds(100, -100);
-                    } else {
-                        SetMotorSpeeds(100, 100);
-                    }
-
-                }
-
-                if ((gpsData.x > 300) && ((gpsData.y < 40))) { //bottom right
-                    sprintf(statusMessage,
-                            "Bottom Right Corner!\n Heading: %f", gpsData.heading);
-                    SetStatusMessage(statusMessage);
-                    if (abs(gpsData.heading - 135) > 5) {
-                        SetMotorSpeeds(50, -50);
-                    } else {
-                        SetMotorSpeeds(100, 100);
-                    }
-
-                }
-
-            }
-        }
-
+    if(front_d<40){
+        obstacle=1;
+    }else{
+        obstacle=0;
     }
 
+    juan_obstacle(&obstacle);
+
+    sprintf(statusMessage,
+            "On the prowl!\n Obstacle: %i",obstacle);
+    SetStatusMessage(statusMessage);
+
+}
+
+void juan_obstacle(int *obstacle){
+
+    int radar_top=GetSensorData(0);
+    int radar_bottom=GetSensorData(1);
+    float front_d=GetSensorData(2);
+    float new_heading;
+
+    if((radar_bottom==0)&&(radar_top==0)){
+
+        if(GetSystemEnergy(SYSTEM_SHIELDS)>(900)) { //fix 480 - currently kills shield to 400
+
+            GPS_INFO gpsData;
+            GetGPSInfo(&gpsData);
+            if ((gpsData.y < 40) || (gpsData.y > 335) || (gpsData.x < 40) || (gpsData.x > 335)) {
+                gpsData.y = gpsData.y - 187.5; //convert to new coord system:
+                gpsData.x = gpsData.x - 187.5; //origin @(187.5,187.5)
+
+                new_heading = (atan((gpsData.y) / (gpsData.x))) * (180 / pi);
+
+                if ((gpsData.x > 0) && (gpsData.y > 0)) { //quad 1
+                    new_heading = new_heading + 180;
+                }
+
+                if ((gpsData.x < 0) && (gpsData.y > 0)) { //quad 2
+                    new_heading = new_heading + 360;
+                }
+
+                if ((gpsData.x < 0) && (gpsData.y < 0)) { //quad 3
+                    //good angle
+                }
+
+                if ((gpsData.x > 0) && (gpsData.y < 0)) { //quad 4
+                    new_heading = new_heading + 180;
+                }
+
+                sprintf(statusMessage,
+                        "New heading: %f. \nCurrent: %f\nObstacle: %i ", new_heading, gpsData.heading, *obstacle);
+                SetStatusMessage(statusMessage);
+
+                if (abs(gpsData.heading - new_heading) > 10) {
+                    SetMotorSpeeds(100, -100);
+                    *obstacle = 1;
+                } else {
+                    *obstacle = 0;
+                }
+            }
+        }else if(front_d<RADAR_MAX_RANGE){
+            SetMotorSpeeds(-100, 100);
+        }
+    }
 }
 
 void juan_fight(int radar_top, int radar_bottom, int lock) {
