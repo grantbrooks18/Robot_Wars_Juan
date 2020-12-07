@@ -84,7 +84,7 @@ void case_execute(int juan_case){
         break;
 
         case 3:
-            juan_fight();
+            //juan_fight();
         break;
 
         case 4:
@@ -108,27 +108,22 @@ void juan_hide(){
                                                SYSTEM_LASERS, SYSTEM_MISSILES };
     SetSystemChargePriorites(juan_prios);
 
-
-    if (GetSystemEnergy(SYSTEM_LASERS) < 50) {
-        SetSystemChargeRate(SYSTEM_LASERS, 200);
-    } else if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
-        SetSystemChargeRate(SYSTEM_LASERS, 0);
-    }
-
     if (GetSystemEnergy(SYSTEM_SHIELDS) < MAX_SHIELD_ENERGY) {
         SetSystemChargeRate(SYSTEM_SHIELDS,MAX_SHIELD_CHARGE_RATE);
+        SetSystemChargeRate(SYSTEM_MISSILES,(GetGeneratorOutput()-MAX_SHIELD_CHARGE_RATE)/2);
+        SetSystemChargeRate(SYSTEM_LASERS,(GetGeneratorOutput()-MAX_SHIELD_CHARGE_RATE)/2);
     } else if (GetSystemEnergy(SYSTEM_SHIELDS) >= MAX_SHIELD_ENERGY) {
+
         SetSystemChargeRate(SYSTEM_SHIELDS, 0);
-        if (GetSystemEnergy(SYSTEM_MISSILES) < MAX_MISSILE_ENERGY) {
-            if (GetSystemEnergy(SYSTEM_LASERS) <= MAX_LASER_ENERGY) {
-                SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput()*0.5);
-            } else if (GetSystemEnergy(SYSTEM_LASERS) == MAX_LASER_ENERGY) {
+            if((GetSystemEnergy(SYSTEM_LASERS)!=MAX_LASER_ENERGY)&&GetSystemEnergy(SYSTEM_MISSILES)!=MAX_MISSILE_ENERGY){
+            if (GetSystemEnergy(SYSTEM_LASERS) == MAX_LASER_ENERGY) {
+                SetSystemChargeRate(SYSTEM_MISSILES, GetGeneratorOutput());
                 SetSystemChargeRate(SYSTEM_LASERS, 0);
             }
-            if (GetSystemEnergy(SYSTEM_MISSILES) <= MAX_MISSILE_ENERGY) {
-                SetSystemChargeRate(SYSTEM_MISSILES, GetGeneratorOutput()*0.5);
-            } else if (GetSystemEnergy(SYSTEM_MISSILES) == MAX_MISSILE_ENERGY) {
+
+            if (GetSystemEnergy(SYSTEM_MISSILES) == MAX_MISSILE_ENERGY) {
                 SetSystemChargeRate(SYSTEM_MISSILES, 0);
+                SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput());
             }
         }
     }
@@ -159,29 +154,23 @@ void juan_find(){
     SetSensorStatus(2, 1);
     SetSensorStatus(3,0);
 
-    if (GetSystemEnergy(SYSTEM_LASERS) < 50) {
-        SetSystemChargeRate(SYSTEM_LASERS, 500);
-    } else if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
-        SetSystemChargeRate(SYSTEM_LASERS, 0);
-    }
-    if (GetSystemEnergy(SYSTEM_MISSILES) < 100) {
-        if (GetSystemEnergy(SYSTEM_LASERS) <= 50) {
-            SetSystemChargeRate(SYSTEM_MISSILES, 600);
-        }
-    } else if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
-        SetSystemChargeRate(SYSTEM_MISSILES, 0);
-    }
     if(GetSystemEnergy(SYSTEM_SHIELDS)<MAX_SHIELD_ENERGY){
-        SetSystemChargeRate(SYSTEM_SHIELDS, 500);
+        SetSystemChargeRate(SYSTEM_SHIELDS, GetGeneratorOutput()*0.5);
+        SetSystemChargeRate(SYSTEM_MISSILES, GetGeneratorOutput()*0.4);
+        SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput()*0.6);
     } else {SetSystemChargeRate(SYSTEM_SHIELDS, 0);}
-    if(GetSystemEnergy(SYSTEM_SHIELDS)==MAX_SHIELD_ENERGY) {
+
+    if(GetSystemEnergy(SYSTEM_SHIELDS)>=MAX_SHIELD_ENERGY) {
         if(GetSystemEnergy(SYSTEM_LASERS)==MAX_LASER_ENERGY) {
             SetSystemChargeRate(SYSTEM_MISSILES, GetGeneratorOutput());
             SetSystemChargeRate(SYSTEM_LASERS, 0);
-        }else
-            if(GetSystemEnergy(SYSTEM_MISSILES)==MAX_MISSILE_ENERGY)
-        SetSystemChargeRate(SYSTEM_MISSILES, 0);
-        SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput());
+        }
+
+        if(GetSystemEnergy(SYSTEM_MISSILES)==MAX_MISSILE_ENERGY){
+            SetSystemChargeRate(SYSTEM_MISSILES, 0);
+            SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput());
+        }
+
     }
     SetMotorSpeeds(100, 100);
 
@@ -285,7 +274,7 @@ void juan_fight(int radar_top, int radar_bottom, int lock) {
     if((radar_bottom==1)&&(radar_top==1)){
         if(lock>0){
 
-            if (GetSystemEnergy(SYSTEM_LASERS) >= 25) {
+            if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
                 FireWeapon(WEAPON_LASER, 80);
             }
 
