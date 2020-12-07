@@ -1,4 +1,11 @@
-
+/*
+ * File for Juan, the fiery luchador robot. Juan is equipped
+ * with a variety of sensors, weapons, defenses and combat
+ * modes to deal with his enemies.
+ *
+ * Author   : Brooks and Lopez Espinosa
+ * Version  : 12/7/2020
+ */
 #include "..\src\competition.h"
 #include "Juan.h"
 
@@ -10,11 +17,17 @@ void juan_setup();
 void juan_actions();
 void juan_hide();
 void juan_find();
-void juan_obstacle(int *obstacle);
+int juan_obstacle(int *obstacle);
 void juan_fight(int radar_top, int radar_bottom, int lock);
 int case_select();
 void case_execute(int juan_case);
 
+/*
+ * Sensor allocation for Juan.
+ * He has 2 radars on his right side, and one
+ * range sensor on his front.
+ *
+ */
 void juan_setup(){
 
     AddSensor(0,SENSOR_RADAR,40,40,RADAR_MAX_RANGE);
@@ -22,6 +35,10 @@ void juan_setup(){
     AddSensor(2,SENSOR_RANGE, 0, 0,RANGE_MAX_RANGE);
 }
 
+/*
+ * Turns on essential sensors. Begins process of
+ * case selection and execution.
+ */
 void juan_actions() {
 
     SetSensorStatus(0, 1);
@@ -33,7 +50,10 @@ void juan_actions() {
     case_execute(case_val);
 
 }
-
+/*
+ * Based on shield reading, selects a
+ * case for juan to execute.
+ */
 int case_select(){
     /* Case 0: Hide
      * Case 1: Search
@@ -49,7 +69,13 @@ int case_select(){
         return 1;
     }
 }
-
+/*
+ * Based on case selection, selects and executes a
+ * given case.
+ *
+ * Receives: juan_case, int that determines which
+ * case Juan is in.
+ */
 void case_execute(int juan_case){
 
     switch(juan_case){
@@ -67,7 +93,12 @@ void case_execute(int juan_case){
     }
 
 }
-
+/*
+ * Juan hides, avoiding enemies and recharging his shield and weapons.
+ * If hit and with sufficient shield, will turbo out of danger. Triggered
+ * when shield is low.
+ *
+ */
 void juan_hide(){
 
     SetSensorStatus(0, 0);
@@ -118,7 +149,14 @@ void juan_hide(){
     }
 
 }
-
+/*
+ * Juan tries to find enemies. Roams around at random,
+ * trying to detect enemies in radar. Will also
+ * detect obstacles in fornt, and determine if they are enemies or walls
+ * using obstacle. If trapped in corner or by wall, will use GPS and
+ * trig to drive towards middle of stage. If an enemy is found, will try
+ * to lock on and engage with juan_fight().
+ */
 void juan_find(){
 
     SetSensorStatus(0, 1);
@@ -176,8 +214,14 @@ void juan_find(){
     juan_obstacle(&obstacle);
 
 }
-
-void juan_obstacle(int *p_obstacle){
+/*
+ * Juan has found an obstacle in front of him. He will try to
+ * use his radar to determine if it is an enemy, and if not,
+ * use the GPS to find heading that will bring him to center stage.
+ *
+ * obstacle: 0 if no obstacle, 1 if obstacle.
+ */
+int juan_obstacle(int *obstacle){
 
     int radar_top=GetSensorData(0);
     int radar_bottom=GetSensorData(1);
@@ -195,7 +239,7 @@ void juan_obstacle(int *p_obstacle){
 
             GPS_INFO gpsData;
 
-            if(*p_obstacle==1) {
+            if(obstacle==1) {
                 GetGPSInfo(&gpsData);
             }else{
                 gpsData.x=GetRandomNumber(375); //randomized searching
@@ -227,11 +271,11 @@ void juan_obstacle(int *p_obstacle){
 
                 if (abs(gpsData.heading - new_heading) > 10) {
                     SetMotorSpeeds(-100, 100);
-                    *p_obstacle = 1;
+                    *obstacle = 1;
                 } else {
                     SetMotorSpeeds(100, 100);
-                    *p_obstacle = 0;
-                    return;
+                    *obstacle = 0;
+                    return 0;
                 }
             }
 
@@ -240,17 +284,24 @@ void juan_obstacle(int *p_obstacle){
         }
     }
 }
-
+/*
+ * Juan has found an ennemy. If locked and weapon systems are ready,
+ * will fire upon ennemy and strafe around them.
+ *
+ * radar_top: top radar. 0 for no enemy, 1 for yes.
+ * radar_bottom: bottom radar. 0 for no enemy, 1 for yes.
+ * lock: 1 for locked on, 0 for not.
+ */
 void juan_fight(int radar_top, int radar_bottom, int lock) {
     SetSensorStatus(2, 0);
     if((radar_bottom==1)&&(radar_top==1)){
         if(lock>0){
 
-            if (GetSystemEnergy(SYSTEM_LASERS) >= MIN_LASER_ENERGY) {
+            if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
                 FireWeapon(WEAPON_LASER, 80);
             }
 
-            if (GetSystemEnergy(SYSTEM_MISSILES) >= MIN_MISSILE_ENERGY) {
+            if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
                 FireWeapon(WEAPON_MISSILE, 85);
             }
         }
