@@ -246,11 +246,11 @@ void juan_fight(int radar_top, int radar_bottom, int lock) {
     if((radar_bottom==1)&&(radar_top==1)){
         if(lock>0){
 
-            if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
+            if (GetSystemEnergy(SYSTEM_LASERS) >= MIN_LASER_ENERGY) {
                 FireWeapon(WEAPON_LASER, 80);
             }
 
-            if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
+            if (GetSystemEnergy(SYSTEM_MISSILES) >= MIN_MISSILE_ENERGY) {
                 FireWeapon(WEAPON_MISSILE, 85);
             }
         }
