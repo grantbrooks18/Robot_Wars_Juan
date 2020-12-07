@@ -10,7 +10,7 @@ void juan_setup();
 void juan_actions();
 void juan_hide();
 void juan_find();
-int juan_obstacle(int *obstacle);
+void juan_obstacle(int *obstacle);
 void juan_fight(int radar_top, int radar_bottom, int lock);
 int case_select();
 void case_execute(int juan_case);
@@ -177,7 +177,7 @@ void juan_find(){
 
 }
 
-int juan_obstacle(int *p_obstacle){
+void juan_obstacle(int *p_obstacle){
 
     int radar_top=GetSensorData(0);
     int radar_bottom=GetSensorData(1);
@@ -231,7 +231,7 @@ int juan_obstacle(int *p_obstacle){
                 } else {
                     SetMotorSpeeds(100, 100);
                     *p_obstacle = 0;
-                    return 0;
+                    return;
                 }
             }
 
