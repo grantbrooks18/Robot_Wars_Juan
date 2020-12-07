@@ -10,7 +10,7 @@ void juan_setup();
 void juan_actions();
 void juan_hide();
 void juan_find();
-void juan_obstacle(int *obstacle);
+int juan_obstacle(int *obstacle);
 void juan_chase();
 void juan_fight(int radar_top, int radar_bottom, int lock);
 int mode_select();
@@ -101,16 +101,12 @@ void case_execute(int juan_case){
 
 void juan_hide(){
 
-    SetSensorStatus(0, 1);
+    SetSensorStatus(0, 0);
     SetSensorStatus(1,0);
     SetSensorStatus(2, 1);
     SetSensorStatus(3,0);
 
     int front_d;
-    int radar_top;
-
-    radar_top=GetSensorData(0);
-
 
     SYSTEM juan_prios[NUM_ENERGY_SYSTEMS] = { SYSTEM_SENSORS, SYSTEM_SHIELDS,
                                                SYSTEM_LASERS, SYSTEM_MISSILES };
@@ -142,7 +138,6 @@ void juan_hide(){
     }
 
     SetMotorSpeeds(100, 100);
-    SetSystemChargeRate(SYSTEM_SHIELDS, 1000);
 
     front_d=GetSensorData(2);
 
@@ -151,7 +146,7 @@ void juan_hide(){
         SetMotorSpeeds(-100, 100);
     }
 
-    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 350)&&((radar_top==1)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
+    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 350)&&((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08))){
         if (IsTurboOn() == 0) {
             TurboBoost();
         } else if (IsTurboOn() == 1) {
@@ -225,19 +220,40 @@ void juan_find(){
 
 }
 
-void juan_obstacle(int *obstacle){
+int juan_obstacle(int *obstacle){
 
     int radar_top=GetSensorData(0);
     int radar_bottom=GetSensorData(1);
     float front_d=GetSensorData(2);
+
     float new_heading;
+    sprintf(statusMessage,
+            "OBSTACLE: %i\n",*obstacle);
+    SetStatusMessage(statusMessage);
 
     if((radar_bottom==0)&&(radar_top==0)){
 
-        if(GetSystemEnergy(SYSTEM_SHIELDS)>(800)) { //fix 900 - currently kills shield to 900
+        float shield =GetSystemEnergy(SYSTEM_SHIELDS);
+        int rounded = (shield+5)/10;
+        rounded = rounded*10;
+
+        sprintf(statusMessage,
+                "ROUNDED: %i \n OBSTACLE: %i",rounded,*obstacle);
+        SetStatusMessage(statusMessage);
+
+
+
+        if(GetSystemEnergy(SYSTEM_SHIELDS)>(rounded)&&(rounded>500)) {
 
             GPS_INFO gpsData;
-            GetGPSInfo(&gpsData);
+
+            if(obstacle==1) {
+                GetGPSInfo(&gpsData);
+            }else{
+                gpsData.x=GetRandomNumber(375);
+                gpsData.y=GetRandomNumber(375);
+                gpsData.heading=GetRandomNumber(360);
+            }
 
             if ((gpsData.y < 40) || (gpsData.y > 335) || (gpsData.x < 40) || (gpsData.x > 335)) {
                 gpsData.y = gpsData.y - 187.5; //convert to new coord system:
@@ -261,17 +277,16 @@ void juan_obstacle(int *obstacle){
                     new_heading = new_heading + 180;
                 }
 
-                sprintf(statusMessage,
-                        "New heading: %f. \nCurrent: %f\nObstacle: %i ", new_heading, gpsData.heading, *obstacle);
-                SetStatusMessage(statusMessage);
-
                 if (abs(gpsData.heading - new_heading) > 10) {
                     SetMotorSpeeds(-100, 100);
                     *obstacle = 1;
                 } else {
+                    SetMotorSpeeds(100, 100);
                     *obstacle = 0;
+                    return 0;
                 }
             }
+
         }else if(front_d<RADAR_MAX_RANGE){
             SetMotorSpeeds(-100, 100);
         }
