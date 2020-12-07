@@ -227,21 +227,12 @@ int juan_obstacle(int *obstacle){
     float front_d=GetSensorData(2);
 
     float new_heading;
-    sprintf(statusMessage,
-            "OBSTACLE: %i\n",*obstacle);
-    SetStatusMessage(statusMessage);
 
     if((radar_bottom==0)&&(radar_top==0)){
 
-        float shield =GetSystemEnergy(SYSTEM_SHIELDS);
-        int rounded = (shield+5)/10;
+        float shield =GetSystemEnergy(SYSTEM_SHIELDS); //helps maintain shield
+        int rounded = (shield+5)/10;                        //when collecting gps
         rounded = rounded*10;
-
-        sprintf(statusMessage,
-                "ROUNDED: %i \n OBSTACLE: %i",rounded,*obstacle);
-        SetStatusMessage(statusMessage);
-
-
 
         if(GetSystemEnergy(SYSTEM_SHIELDS)>(rounded)&&(rounded>500)) {
 
@@ -250,8 +241,8 @@ int juan_obstacle(int *obstacle){
             if(obstacle==1) {
                 GetGPSInfo(&gpsData);
             }else{
-                gpsData.x=GetRandomNumber(375);
-                gpsData.y=GetRandomNumber(375);
+                gpsData.x=GetRandomNumber(375); //randomized searching
+                gpsData.y=GetRandomNumber(375); //if there's no obstacle
                 gpsData.heading=GetRandomNumber(360);
             }
 
@@ -303,7 +294,7 @@ void juan_fight(int radar_top, int radar_bottom, int lock) {
             }
 
             if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
-                FireWeapon(WEAPON_MISSILE, 80);
+                FireWeapon(WEAPON_MISSILE, 85);
             }
         }
 
