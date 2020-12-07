@@ -250,8 +250,9 @@ int juan_obstacle(int *obstacle){
                 gpsData.y = gpsData.y - 187.5; //convert to new coord system:
                 gpsData.x = gpsData.x - 187.5; //origin @(187.5,187.5) of arena
 
-                new_heading = (atan((gpsData.y) / (gpsData.x))) * (180 / pi); //takes xy coord, turns into angle to centre of arena
-
+                new_heading = (atan((gpsData.y) / (gpsData.x))) * (180 / pi); //takes xy coord,
+                                                                              // turns into angle to centre of arena
+                //adjusts to correct quadrant
                 if ((gpsData.x > 0) && (gpsData.y > 0)) { //quad 1
                     new_heading = new_heading + 180;
                 }
@@ -284,8 +285,8 @@ int juan_obstacle(int *obstacle){
     }
 }
 /*
- * Juan has found an ennemy. If locked and weapon systems are ready,
- * will fire upon ennemy and strafe around them.
+ * Juan has found an enemy. If locked and weapon systems are ready,
+ * will fire upon enemy and strafe around them.
  *
  * radar_top: top radar. 0 for no enemy, 1 for yes.
  * radar_bottom: bottom radar. 0 for no enemy, 1 for yes.
