@@ -182,7 +182,7 @@ void juan_find(){
         SetSystemChargeRate(SYSTEM_SHIELDS, 500);
     } else {SetSystemChargeRate(SYSTEM_SHIELDS, 0);}
 
-    SetMotorSpeeds(100, 100);
+    SetMotorSpeeds(50, 100);
 
     int radar_top=GetSensorData(0);
     int radar_bottom=GetSensorData(1);
