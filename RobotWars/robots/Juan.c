@@ -52,7 +52,8 @@ void juan_actions() {
 }
 /*
  * Based on shield reading, selects a
- * case for juan to execute.
+ * case for juan to execute. Also, allows for the for the code within juan_find
+ * to be bypassed if there happens to be an enemy in Juan's sights
  */
 int case_select(){
     /* Case 0: Hide
