@@ -1,7 +1,7 @@
 /*
  * File for Juan, the fiery luchador robot. Juan is equipped
  * with a variety of sensors, weapons, defenses and combat
- * modes to deal with his enemies.
+ * modes to deal with his enemigos.
  *
  * Author   : Brooks and Lopez Espinosa
  * Version  : 12/7/2020
@@ -91,7 +91,6 @@ void case_execute(int juan_case){
             juan_fight(1,1,1);
         break;
     }
-
 }
 /*
  * Juan hides, avoiding enemies and recharging his shield and weapons.
