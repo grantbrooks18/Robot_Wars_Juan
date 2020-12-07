@@ -55,19 +55,19 @@ int case_select(){
      */
     int mode_val=mode_select();
 
-    if((GetSystemEnergy(SYSTEM_SHIELDS) < 400) && (mode_val == 0)){
+    if(GetSystemEnergy(SYSTEM_SHIELDS) < 400){
         return 0;
     }
-    if((GetSystemEnergy(SYSTEM_SHIELDS) > 400) && (mode_val == 0)){ //testing search
+    if(GetSystemEnergy(SYSTEM_SHIELDS) > 400){ //testing search
         return 1;
     }
-    if(((GetSensorData(1) + GetSensorData(2)) == 0) && (mode_val == 0)){
+    if((GetSensorData(1) + GetSensorData(2)) == 0){
         return 1;
     }
-    if(((GetSensorData(1) + GetSensorData(2)) == 1) && (mode_val == 0)){
+    if((GetSensorData(1) + GetSensorData(2)) == 1){
         return 2;
     }
-    if(((GetSensorData(1) + GetSensorData(2)) == 2) && (mode_val == 0)){
+    if((GetSensorData(1) + GetSensorData(2)) == 2){
         return 3;
     }
 }
@@ -83,12 +83,8 @@ void case_execute(int juan_case){
             juan_find();
         break;
 
-        case 2:
-            //juan_chase();
-        break;
-
         case 3:
-            //juan_fight();
+            juan_fight();
         break;
 
         case 4:
