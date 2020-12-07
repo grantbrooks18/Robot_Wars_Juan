@@ -52,7 +52,8 @@ void juan_actions() {
 }
 /*
  * Based on shield reading, selects a
- * case for juan to execute.
+ * case for juan to execute. Also, allows for the for the code within juan_find
+ * to be bypassed if there happens to be an enemy in Juan's sights
  */
 int case_select(){
     /* Case 0: Hide
@@ -284,8 +285,8 @@ int juan_obstacle(int *obstacle){
     }
 }
 /*
- * Juan has found an ennemy. If locked and weapon systems are ready,
- * will fire upon ennemy and strafe around them.
+ * Juan has found an enemy. If locked and weapon systems are ready,
+ * will fire upon enemy and strafe around them.
  *
  * radar_top: top radar. 0 for no enemy, 1 for yes.
  * radar_bottom: bottom radar. 0 for no enemy, 1 for yes.
