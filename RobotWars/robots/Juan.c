@@ -201,6 +201,7 @@ void juan_find(){
     if(lock>0){
         juan_fight(radar_top,radar_bottom,lock);
     }
+
     int obstacle;
 
     if(front_d<40){
@@ -226,15 +227,16 @@ void juan_obstacle(int *obstacle){
 
     if((radar_bottom==0)&&(radar_top==0)){
 
-        if(GetSystemEnergy(SYSTEM_SHIELDS)>(900)) { //fix 480 - currently kills shield to 400
+        if(GetSystemEnergy(SYSTEM_SHIELDS)>(850)) { //fix 900 - currently kills shield to 900
 
             GPS_INFO gpsData;
             GetGPSInfo(&gpsData);
+
             if ((gpsData.y < 40) || (gpsData.y > 335) || (gpsData.x < 40) || (gpsData.x > 335)) {
                 gpsData.y = gpsData.y - 187.5; //convert to new coord system:
-                gpsData.x = gpsData.x - 187.5; //origin @(187.5,187.5)
+                gpsData.x = gpsData.x - 187.5; //origin @(187.5,187.5) of arena
 
-                new_heading = (atan((gpsData.y) / (gpsData.x))) * (180 / pi);
+                new_heading = (atan((gpsData.y) / (gpsData.x))) * (180 / pi); //takes xy coord, turns into angle to centre of arena
 
                 if ((gpsData.x > 0) && (gpsData.y > 0)) { //quad 1
                     new_heading = new_heading + 180;
@@ -256,8 +258,8 @@ void juan_obstacle(int *obstacle){
                         "New heading: %f. \nCurrent: %f\nObstacle: %i ", new_heading, gpsData.heading, *obstacle);
                 SetStatusMessage(statusMessage);
 
-                if (abs(gpsData.heading - new_heading) > 10) {
-                    SetMotorSpeeds(100, -100);
+                if (abs(gpsData.heading - new_heading) > 5) {
+                    SetMotorSpeeds(-100, 100);
                     *obstacle = 1;
                 } else {
                     *obstacle = 0;
