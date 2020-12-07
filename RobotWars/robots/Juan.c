@@ -183,11 +183,9 @@ void juan_find(){
             SetSystemChargeRate(SYSTEM_MISSILES, GetGeneratorOutput());
             SetSystemChargeRate(SYSTEM_LASERS, 0);
         }else
-            if(GetSystemEnergy(SYSTEM_MISSILES)==MAX_MISSILE_ENERGY){
-                SetSystemChargeRate(SYSTEM_MISSILES, 0);
-                SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput());
-            }
-
+            if(GetSystemEnergy(SYSTEM_MISSILES)==MAX_MISSILE_ENERGY)
+        SetSystemChargeRate(SYSTEM_MISSILES, 0);
+        SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput());
     }
     SetMotorSpeeds(100, 100);
 
