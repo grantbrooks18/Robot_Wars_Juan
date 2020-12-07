@@ -177,7 +177,7 @@ void juan_find(){
 
 }
 
-int juan_obstacle(int *obstacle){
+int juan_obstacle(int *p_obstacle){
 
     int radar_top=GetSensorData(0);
     int radar_bottom=GetSensorData(1);
@@ -195,7 +195,7 @@ int juan_obstacle(int *obstacle){
 
             GPS_INFO gpsData;
 
-            if(obstacle==1) {
+            if(*p_obstacle==1) {
                 GetGPSInfo(&gpsData);
             }else{
                 gpsData.x=GetRandomNumber(375); //randomized searching
@@ -227,10 +227,10 @@ int juan_obstacle(int *obstacle){
 
                 if (abs(gpsData.heading - new_heading) > 10) {
                     SetMotorSpeeds(-100, 100);
-                    *obstacle = 1;
+                    *p_obstacle = 1;
                 } else {
                     SetMotorSpeeds(100, 100);
-                    *obstacle = 0;
+                    *p_obstacle = 0;
                     return 0;
                 }
             }
