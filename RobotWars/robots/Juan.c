@@ -123,21 +123,24 @@ void juan_hide(){
         SetSystemChargeRate(SYSTEM_LASERS, 0);
     }
 
-    if (GetSystemEnergy(SYSTEM_MISSILES) < MAX_MISSILE_ENERGY) {
-        if (GetSystemEnergy(SYSTEM_LASERS) <= 50) {
-            SetSystemChargeRate(SYSTEM_MISSILES, 600);
-        } else if (GetSystemEnergy(SYSTEM_LASERS) >=50) {
-            SetSystemChargeRate(SYSTEM_MISSILES, 300);
-        }
-    } else if (GetSystemEnergy(SYSTEM_MISSILES) >= MAX_MISSILE_ENERGY) {
-        SetSystemChargeRate(SYSTEM_MISSILES, 0);
-    }
-
     if (GetSystemEnergy(SYSTEM_SHIELDS) < MAX_SHIELD_ENERGY) {
         SetSystemChargeRate(SYSTEM_SHIELDS,MAX_SHIELD_CHARGE_RATE);
     } else if (GetSystemEnergy(SYSTEM_SHIELDS) >= MAX_SHIELD_ENERGY) {
         SetSystemChargeRate(SYSTEM_SHIELDS, 0);
+        if (GetSystemEnergy(SYSTEM_MISSILES) < MAX_MISSILE_ENERGY) {
+            if (GetSystemEnergy(SYSTEM_LASERS) <= MAX_LASER_ENERGY) {
+                SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput()*0.5);
+            } else if (GetSystemEnergy(SYSTEM_LASERS) == MAX_LASER_ENERGY) {
+                SetSystemChargeRate(SYSTEM_LASERS, 0);
+            }
+            if (GetSystemEnergy(SYSTEM_MISSILES) <= MAX_MISSILE_ENERGY) {
+                SetSystemChargeRate(SYSTEM_MISSILES, GetGeneratorOutput()*0.5);
+            } else if (GetSystemEnergy(SYSTEM_MISSILES) == MAX_MISSILE_ENERGY) {
+                SetSystemChargeRate(SYSTEM_MISSILES, 0);
+            }
+        }
     }
+
     SetMotorSpeeds(100, 100);
     SetSystemChargeRate(SYSTEM_SHIELDS, 1000);
 
@@ -148,7 +151,7 @@ void juan_hide(){
         SetMotorSpeeds(-100, 100);
     }
 
-    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 380)&&((radar_top==1)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
+    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 350)&&((radar_top==1)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
         if (IsTurboOn() == 0) {
             TurboBoost();
         } else if (IsTurboOn() == 1) {
@@ -180,7 +183,15 @@ void juan_find(){
     if(GetSystemEnergy(SYSTEM_SHIELDS)<MAX_SHIELD_ENERGY){
         SetSystemChargeRate(SYSTEM_SHIELDS, 500);
     } else {SetSystemChargeRate(SYSTEM_SHIELDS, 0);}
-
+    if(GetSystemEnergy(SYSTEM_SHIELDS)==MAX_SHIELD_ENERGY) {
+        if(GetSystemEnergy(SYSTEM_LASERS)==MAX_LASER_ENERGY) {
+            SetSystemChargeRate(SYSTEM_MISSILES, GetGeneratorOutput());
+            SetSystemChargeRate(SYSTEM_LASERS, 0);
+        }else
+            if(GetSystemEnergy(SYSTEM_MISSILES)==MAX_MISSILE_ENERGY)
+        SetSystemChargeRate(SYSTEM_MISSILES, 0);
+        SetSystemChargeRate(SYSTEM_LASERS, GetGeneratorOutput());
+    }
     SetMotorSpeeds(100, 100);
 
     int radar_top=GetSensorData(0);
@@ -212,10 +223,6 @@ void juan_find(){
 
     juan_obstacle(&obstacle);
 
-    sprintf(statusMessage,
-            "On the prowl!\n Obstacle: %i",obstacle);
-    SetStatusMessage(statusMessage);
-
 }
 
 void juan_obstacle(int *obstacle){
@@ -227,7 +234,7 @@ void juan_obstacle(int *obstacle){
 
     if((radar_bottom==0)&&(radar_top==0)){
 
-        if(GetSystemEnergy(SYSTEM_SHIELDS)>(850)) { //fix 900 - currently kills shield to 900
+        if(GetSystemEnergy(SYSTEM_SHIELDS)>(800)) { //fix 900 - currently kills shield to 900
 
             GPS_INFO gpsData;
             GetGPSInfo(&gpsData);
@@ -258,7 +265,7 @@ void juan_obstacle(int *obstacle){
                         "New heading: %f. \nCurrent: %f\nObstacle: %i ", new_heading, gpsData.heading, *obstacle);
                 SetStatusMessage(statusMessage);
 
-                if (abs(gpsData.heading - new_heading) > 5) {
+                if (abs(gpsData.heading - new_heading) > 10) {
                     SetMotorSpeeds(-100, 100);
                     *obstacle = 1;
                 } else {
