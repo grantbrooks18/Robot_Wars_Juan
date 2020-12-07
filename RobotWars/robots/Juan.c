@@ -40,7 +40,7 @@ void juan_actions() {
 }
 
 int mode_select(){
-    if(GetGeneratorStructure() < 250){
+    if(GetGeneratorStructure() < (MAX_GENERATOR_STRUCTURE / 2)){
         return 1;
     } else{
         return 0;
@@ -117,17 +117,17 @@ void juan_hide(){
     SetSystemChargePriorites(juan_prios);
 
 
-    if (GetSystemEnergy(SYSTEM_LASERS) < 50) {
+    if (GetSystemEnergy(SYSTEM_LASERS) < MAX_LASER_ENERGY) {
         SetSystemChargeRate(SYSTEM_LASERS, 200);
-    } else if (GetSystemEnergy(SYSTEM_LASERS) >= 50) {
+    } else if (GetSystemEnergy(SYSTEM_LASERS) >= MAX_LASER_ENERGY) {
         SetSystemChargeRate(SYSTEM_LASERS, 0);
     }
 
     if (GetSystemEnergy(SYSTEM_MISSILES) < MAX_MISSILE_ENERGY) {
-        if (GetSystemEnergy(SYSTEM_LASERS) <= 50) {
-            SetSystemChargeRate(SYSTEM_MISSILES, 600);
-        } else if (GetSystemEnergy(SYSTEM_LASERS) >=50) {
-            SetSystemChargeRate(SYSTEM_MISSILES, 300);
+        if (GetSystemEnergy(SYSTEM_LASERS) < MAX_LASER_ENERGY) {
+            SetSystemChargeRate(SYSTEM_MISSILES, MAX_MISSILE_CHARGE_RATE);
+        } else if (GetSystemEnergy(SYSTEM_LASERS) >=MAX_LASER_ENERGY) {
+            SetSystemChargeRate(SYSTEM_MISSILES, (MAX_MISSILE_CHARGE_RATE / 2));
         }
     } else if (GetSystemEnergy(SYSTEM_MISSILES) >= MAX_MISSILE_ENERGY) {
         SetSystemChargeRate(SYSTEM_MISSILES, 0);
@@ -139,7 +139,7 @@ void juan_hide(){
         SetSystemChargeRate(SYSTEM_SHIELDS, 0);
     }
     SetMotorSpeeds(100, 100);
-    SetSystemChargeRate(SYSTEM_SHIELDS, 1000);
+    SetSystemChargeRate(SYSTEM_SHIELDS, MAX_SHIELD_CHARGE_RATE);
 
     front_d=GetSensorData(2);
 
@@ -148,7 +148,8 @@ void juan_hide(){
         SetMotorSpeeds(-100, 100);
     }
 
-    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 380)&&((radar_top==1)||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
+    if ((GetSystemEnergy(SYSTEM_SHIELDS) > 380)&&((radar_top==1)
+    ||((GetBumpInfo() == 0x04)||(GetBumpInfo() == 0x08)))){
         if (IsTurboOn() == 0) {
             TurboBoost();
         } else if (IsTurboOn() == 1) {
@@ -212,7 +213,7 @@ void juan_find(){
     juan_obstacle(&obstacle);
 
     sprintf(statusMessage,
-            "On the prowl!\n Obstacle: %i",obstacle);
+            "Donde estan!?!\n Obstacle: %i",obstacle);
     SetStatusMessage(statusMessage);
 
 }
@@ -274,11 +275,11 @@ void juan_fight(int radar_top, int radar_bottom, int lock) {
     if((radar_bottom==1)&&(radar_top==1)){
         if(lock>0){
 
-            if (GetSystemEnergy(SYSTEM_LASERS) >= 25) {
+            if (GetSystemEnergy(SYSTEM_LASERS) >= (MIN_LASER_ENERGY + 5)) {
                 FireWeapon(WEAPON_LASER, 80);
             }
 
-            if (GetSystemEnergy(SYSTEM_MISSILES) >= 100) {
+            if (GetSystemEnergy(SYSTEM_MISSILES) >= MIN_MISSILE_ENERGY) {
                 FireWeapon(WEAPON_MISSILE, 80);
             }
         }
