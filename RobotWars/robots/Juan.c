@@ -152,7 +152,7 @@ void juan_hide(){
 /*
  * Juan tries to find enemies. Roams around at random,
  * trying to detect enemies in radar. Will also
- * detect obstacles in fornt, and determine if they are enemies or walls
+ * detect obstacles in front, and determine if they are enemies or walls
  * using obstacle. If trapped in corner or by wall, will use GPS and
  * trig to drive towards middle of stage. If an enemy is found, will try
  * to lock on and engage with juan_fight().
